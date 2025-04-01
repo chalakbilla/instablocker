@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Instagram Reporter",
+    "version": "1.0",
+    "description": "Automate Instagram reporting with a start button.",
+    "permissions": ["scripting", "activeTab"],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*.instagram.com/*"],
+            "js": ["content.js"]
+        }
+    ]
+}
